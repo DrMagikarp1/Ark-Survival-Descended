@@ -108,6 +108,14 @@ First check: `GetBoolOptionIni("ASEPurist", "AllowAllGarugaAdditions")`.
   * `Xiphactinus_Character_BP_C` (Option: `"AllowXiphactinus"`)
   * `Helicoprion_Character_BP_C` (Option: `"AllowHelicoprion"`)
 
+#### Future-Proofing with CustomBlockedDinos:
+To make sure you never have to recook the mod when Wildcard adds future dinos:
+1. Add node: **`Get String Option Ini`** &rarr; Section: `"ASEPurist"`, Option: `"CustomBlockedDinos"`.
+2. Connect output to **`Parse Into Array`** (Delimiter: `","`).
+3. Connect output to a **`For Each Loop`**:
+   - Store these string names into a string array variable: `CustomBlockedNames` (Array of Strings).
+   - In the purge check, we can check both class references and string names (`Get Class` -> `Get Display Name` -> `Contains`)!
+
 ---
 
 ### 3. Setting Up the Purge Loop

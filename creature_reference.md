@@ -1,68 +1,120 @@
-# ARK: Survival Ascended (ASA) Purist Mod - Creature Reference Sheet
+# ARK: Survival Ascended (ASA) Purist Mod - Master Creature Reference Sheet
 
-This document catalogs the exact character Blueprint classes for creatures introduced during **ARK: Survival Ascended (ASA)** and **Garuga's ARK Additions**, as well as legacy **ARK: Survival Evolved (ASE)** creatures that must remain unblocked.
+This document catalogs all creatures that debuted in **ARK: Survival Ascended (ASA)**, paid expansions, community votes, Garuga's ARK Additions, and custom DLCs (Lost Colony, Dragontopia, Tides of Fortune, Astraeos) that are targeted for removal in Pure ASE mode, as well as the legacy **ARK: Survival Evolved (ASE)** creatures that must remain allowed everywhere.
 
 ---
 
-## 1. ASA-Exclusive Creatures (Blocked by Default)
+## 1. Deinotherium (Target #1!)
 
-These creatures were newly created and introduced for *ARK: Survival Ascended* (launching October 2023 onwards). In pure ASE mode, these will be intercepted and prevented from spawning.
-
-| Common Name | Blueprint Class Name | Content Source / DLC | Default Action |
+| Creature | Blueprint Class Name | Source / Context | Action |
 | :--- | :--- | :--- | :--- |
-| **Fasolasuchus** | `Fasola_Character_BP_C` | Scorched Earth (Community Vote) | **BLOCK** |
-| **Oasisaur** | `Oasisaur_Character_BP_C` | Bob's Tall Tales (Frontier Showdown) | **BLOCK** |
-| **Pyromane** | `Pyromane_Character_BP_C` | Fantastic Tames (Paid DLC) | **BLOCK** |
-| **Gigantoraptor** | `Gigantoraptor_Character_BP_C` | The Island / Center (Community Vote) | **BLOCK** |
-| **Shastasaurus** | `Shastasaurus_Character_BP_C` | The Center (Community Vote) | **BLOCK** |
-| **Yi Ling** | `YiLing_Character_BP_C` | Aberration (Community Vote) | **BLOCK** |
-| **Cosmo** | `Cosmo_Character_BP_C` | Bob's Tall Tales (Steampunk Ascent) | **BLOCK** |
-| **Sir-5rM-8** | `Sir5rM8_Character_BP_C` | Bob's Tall Tales (Steampunk Ascent) | **BLOCK** |
-| **Dreadmare** | `Dreadmare_Character_BP_C` | Fantastic Tames (Paid DLC) | **BLOCK** |
-| **Dreadnoughtus** | `Dreadnoughtus_Character_BP_C` | Extinction (Community Vote) | **BLOCK** |
-| **Armadoggo** | `Armadoggo_Character_BP_C` | Bob's Tall Tales (Wasteland War) | **BLOCK** |
+| **Deinotherium (ASA Official/Mod)** | `DeinotheriumASA_Character_BP_C` | Official ASA integration / Mod port | **BLOCK** |
+| **Deinotherium (Legacy Mod)** | `Deinotherium_Character_BP_C` | Original Additions mod port | **BLOCK** |
 
 ---
 
-## 2. Garuga123's ARK Additions (Officialized in ASA)
+## 2. Lost Colony Expansion DLC
 
-These creatures originated as popular third-party mods in ASE and were integrated by Studio Wildcard into official base-game ASA releases. They are blocked by default in pure ASE mode, but can be individually or globally toggled via `.ini`.
-
-| Common Name | Blueprint Class Name | Original Source | Default Action |
+| Creature | Blueprint Class Name | Description | Action |
 | :--- | :--- | :--- | :--- |
-| **Ceratosaurus** | `Ceratosaurus_Character_BP_C` | ARK Additions: The Collection | **BLOCK (Configurable)** |
-| **Deinosuchus** | `Deinosuchus_Character_BP_C` | ARK Additions: The Collection | **BLOCK (Configurable)** |
-| **Archelon** | `Archelon_Character_BP_C` | ARK Additions: The Collection | **BLOCK (Configurable)** |
-| **Brachiosaurus** | `Brachiosaurus_Character_BP_C` | ARK Additions: The Collection | **BLOCK (Configurable)** |
-| **Xiphactinus** | `Xiphactinus_Character_BP_C` | ARK Additions: The Collection | **BLOCK (Configurable)** |
-| **Helicoprion** | `Helicoprion_Character_BP_C` | ARK Additions: The Collection | **BLOCK (Configurable)** |
+| **Aureliax** | `SnowDragon_Character_BP_C` | Snow dragon / aerial predator | **BLOCK** |
+| **Cryolophosaurus** | `Cryolophosaurus_Character_BP_C` | Freezing theropod | **BLOCK** |
+| **Gigadesmodus** | `BossBat_Character_BP_C` | Giant corrupted bat variant | **BLOCK** |
+| **Gloon** | `LostCharge_LanternPet_Char_BP_C` | Charge lantern pet | **BLOCK** |
+| **Malwyn** | `DevilFox_Character_BP_C` | Demonic fox tame | **BLOCK** |
+| **Ossidon** | `SnowMonster_Character_BP_C` | Frost yeti / snow monster | **BLOCK** |
+| **Solwyn** | `AngelFox_Character_BP_C` | Celestial fox tame | **BLOCK** |
+| **Veilwyn** | `YoungIceFox_DinoCompanion_Character_BP_C` / `YoungIceFox_Character_BP_C` | Ice fox companion | **BLOCK** |
+| **Spring Drakeling** | `ShoulderDragon_Character_BP_Spring_C` | Seasonal shoulder dragon | **BLOCK** |
+| **Summer Drakeling** | `ShoulderDragon_Character_BP_Summer_C` | Seasonal shoulder dragon | **BLOCK** |
+| **Autumn Drakeling** | `ShoulderDragon_Character_BP_Autumn_C` | Seasonal shoulder dragon | **BLOCK** |
+| **Winter Drakeling** | `ShoulderDragon_Character_BP_Winter_C` | Seasonal shoulder dragon | **BLOCK** |
+| **Drakeling (Base)** | `ShoulderDragon_Character_BP_C` | Base shoulder dragon class | **BLOCK** |
+| **Thralls (Fighter / Soldier / Cultist)** | `Thrall_Character_BP_...` | Humanoid defense NPCs | **BLOCK** |
 
 ---
 
-## 3. Legacy ASE Creatures (ALWAYS ALLOWED)
+## 3. Dragontopia Expansion DLC
 
-These creatures were released during the lifespan of *ARK: Survival Evolved*. Even if they appear on modded maps (e.g., *Scorched Earth Reborn*) or out of their native ASE order, **they MUST NEVER be blocked**.
-
-| Creature | Debut Map in ASE | Release Date | Rule |
+| Creature | Blueprint Class Name | Description | Action |
 | :--- | :--- | :--- | :--- |
-| **Desmodus** | Fjordur (ASE) | June 2022 | **ALLOW EVERYWHERE** |
-| **Andrewsarchus** | Fjordur (ASE) | June 2022 | **ALLOW EVERYWHERE** |
-| **Fjordhawk** | Fjordur (ASE) | June 2022 | **ALLOW EVERYWHERE** |
-| **Fenrir** | Fjordur (ASE) | June 2022 | **ALLOW EVERYWHERE** |
-| **Sinomacrops** | Lost Island (ASE) | Dec 2021 | **ALLOW EVERYWHERE** |
-| **Dinopithecus** | Lost Island (ASE) | Dec 2021 | **ALLOW EVERYWHERE** |
-| **Amargasaurus** | Lost Island (ASE) | Dec 2021 | **ALLOW EVERYWHERE** |
-| **Tropeognathus** | Crystal Isles (ASE) | June 2020 | **ALLOW EVERYWHERE** |
-| **Deinonychus** | Valguero (ASE) | June 2019 | **ALLOW EVERYWHERE** |
-| **Managarmr, Velonasaur, Snow Owl, Gacha** | Extinction (ASE) | Nov 2018 | **ALLOW EVERYWHERE** |
-| **Rock Drake, Reaper, Karkinos, Ravager** | Aberration (ASE) | Dec 2017 | **ALLOW EVERYWHERE** |
-| **Wyverns, Phoenix, Mantis, Jerboa** | Scorched Earth (ASE) | Sept 2016 | **ALLOW EVERYWHERE** |
-| **All The Island / The Center Vanilla Dinos** | Base Game | 2015-2016 | **ALLOW EVERYWHERE** |
+| **Eclipsar Umbra** | `Umbra_Character_BP_C` / `Eclipsar_Character_BP_C` | Shadow plasma dragon | **BLOCK** |
+| **Lumina** | `Lumina_Character_BP_C` | Light / celestial dragon | **BLOCK** |
+| **Gargantar** | `Gargantar_Character_BP_C` | Vacuum / belly beast | **BLOCK** |
 
 ---
 
-## 4. Special Case: Rhyniognatha
+## 4. Tides of Fortune Expansion DLC
 
-* **Blueprint Class:** `Rhynio_Character_BP_C`
-* **Release:** June 2023 on *ARK: Survival Evolved* (The Island / Lost Island) as the final community creature vote in ASE prior to ASA.
-* **Mod Rule:** Treated as an official ASE creature and allowed to spawn by default. An optional `.ini` toggle `BlockRhyniognatha=False` can be provided for players who consider it too modern.
+| Creature | Blueprint Class Name | Description | Action |
+| :--- | :--- | :--- | :--- |
+| **Tidepup** | `Tidepup_Character_BP_C` | Semi-aquatic healing salamander | **BLOCK** |
+| **Parrot** | `Parrot_Character_BP_C` | Nautical scout / treasure tracker | **BLOCK** |
+
+---
+
+## 5. Fantastic Tames (Paid Micro-DLCs)
+
+| Creature | Blueprint Class Name | Description | Action |
+| :--- | :--- | :--- | :--- |
+| **Elderclaw** | `SpiritBear_Character_BP_C` | Spirit bear / ancient apex bear | **BLOCK** |
+| **Pyromane** | `Pyromane_Character_BP_C` | Flame shoulder pet / rideable lion | **BLOCK** |
+| **Dreadmare** | `Dreadmare_Character_BP_C` | Dark pegasus / shadow steed | **BLOCK** |
+| **Cerberax** | `Cerberax_Character_BP_C` | Three-headed hound | **BLOCK** |
+| **Burrowbuck** | `Burrowbuck_Character_BP_C` | Burrowing mount | **BLOCK** |
+| **Enigmasaur** | `Enigmasaur_Character_BP_C` | Fantastic tame | **BLOCK** |
+
+---
+
+## 6. Bob's Tall Tales (Adventure Pass)
+
+| Creature | Blueprint Class Name | Story Map | Action |
+| :--- | :--- | :--- | :--- |
+| **Oasisaur** | `Oasisaur_Character_BP_C` | Scorched Earth | **BLOCK** |
+| **Cosmo** | `Cosmo_Character_BP_C` | Aberration | **BLOCK** |
+| **Sir-5rM-8** | `Sir5rM8_Character_BP_C` | Aberration (Clockwork Automaton) | **BLOCK** |
+| **Armadoggo** | `Armadoggo_Character_BP_C` | Extinction | **BLOCK** |
+
+---
+
+## 7. Official ASA Community Votes & Base Game Newcomers
+
+| Creature | Blueprint Class Name | Map Debut | Action |
+| :--- | :--- | :--- | :--- |
+| **Fasolasuchus** | `Fasola_Character_BP_C` | Scorched Earth | **BLOCK** |
+| **Gigantoraptor** | `Gigantoraptor_Character_BP_C` | The Island / The Center | **BLOCK** |
+| **Shastasaurus** | `Shastasaurus_Character_BP_C` | The Center | **BLOCK** |
+| **Yi Ling** | `YiLing_Character_BP_C` | Aberration | **BLOCK** |
+| **Dreadnoughtus** | `Dreadnoughtus_Character_BP_C` | Extinction | **BLOCK** |
+| **Palaeoctopus** | `Palaeoctopus_Character_BP_C` | Aquatic Expansion / Gen 1 | **BLOCK** |
+| **Boaratos** | `Boaratos_Character_BP_C` | Astraeos Map | **BLOCK** |
+
+---
+
+## 8. Garuga123's ARK Additions (Official Base Game Integrations)
+
+| Creature | Blueprint Class Name | Description | Action |
+| :--- | :--- | :--- | :--- |
+| **Ceratosaurus** | `Ceratosaurus_Character_BP_C` | Venomous horned theropod | **BLOCK** |
+| **Deinosuchus** | `Deinosuchus_Character_BP_C` | Gigantic croc with giga-bite | **BLOCK** |
+| **Acrocanthosaurus** | `Acrocanthosaurus_Character_BP_C` | High-damage apex predator | **BLOCK** |
+| **Concavenator** | `Concavenator_Character_BP_C` | Sand-burrowing carnivore | **BLOCK** |
+| **Archelon** | `Archelon_Character_BP_C` | Giant sea turtle | **BLOCK** |
+| **Brachiosaurus** | `Brachiosaurus_Character_BP_C` | Titan-class sauropod | **BLOCK** |
+| **Xiphactinus** | `Xiphactinus_Character_BP_C` | Ravenous ocean fish | **BLOCK** |
+| **Helicoprion** | `Helicoprion_Character_BP_C` | Spiral-jawed shark | **BLOCK** |
+
+---
+
+## 9. Legacy ASE Creatures (ALWAYS ALLOWED)
+
+These creatures were released during the lifespan of *ARK: Survival Evolved*. Even if they appear on modded maps (e.g., *Scorched Earth Reborn*) or outside their native ASE maps, **they will NEVER be blocked**:
+
+* **Desmodus** (`Desmodus_Character_BP_C`) & Fjordur Dinos (Andrewsarchus, Fjordhawk, Fenrir)
+* **Sinomacrops** (`Sinomacrops_Character_BP_C`) & Lost Island Dinos (Dinopithecus, Amargasaurus)
+* **Tropeognathus** (Crystal Isles) & **Deinonychus** (Valguero)
+* **All Extinction Dinos** (Managarmr, Velonasaur, Snow Owl, Gacha, Enforcer)
+* **All Aberration Dinos** (Rock Drake, Reaper, Karkinos, Ravager, Basilisk, Light Pets)
+* **All Scorched Earth Dinos** (Wyverns, Phoenix, Mantis, Jerboa, Morellatops)
+* **All Vanilla Island / Center Dinos** (Rex, Giga, Spino, Dodo, Argentavis, Quetzal, etc.)
+* **Rhyniognatha** (`Rhynio_Character_BP_C`) — Released in June 2023 on ASE!
