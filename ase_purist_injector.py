@@ -38,52 +38,68 @@ CREATURE_DATABASE = {
             ("SnowDragon_Character_BP_C", "Aureliax (Snow Dragon)"),
             ("Cryolophosaurus_Character_BP_C", "Cryolophosaurus"),
             ("BossBat_Character_BP_C", "Gigadesmodus"),
+            ("BossBat_Character_BP_LostKing_C", "Gigadesmodus (Lost King Variant)"),
             ("LostCharge_LanternPet_Char_BP_C", "Gloon (Lantern Pet)"),
             ("DevilFox_Character_BP_C", "Malwyn"),
             ("SnowMonster_Character_BP_C", "Ossidon"),
+            ("MegaSnowMonster_Character_BP_C", "Ossidon (Alpha / Mega)"),
             ("AngelFox_Character_BP_C", "Solwyn"),
             ("YoungIceFox_DinoCompanion_Character_BP_C", "Veilwyn (Ice Fox Companion)"),
-            ("YoungIceFox_Character_BP_C", "Veilwyn (Base Ice Fox)"),
+            ("Ghost_YoungIceFox_DinoCompanion_Character_BP_C", "Veilwyn (Ghost Ice Fox)"),
+            ("YoungIceFox_Character_BP_C", "Veilwyn (Base Ice Fox Alias)"),
             ("ShoulderDragon_Character_BP_Spring_C", "Spring Drakeling (Shoulder Dragon)"),
             ("ShoulderDragon_Character_BP_Summer_C", "Summer Drakeling (Shoulder Dragon)"),
             ("ShoulderDragon_Character_BP_Autumn_C", "Autumn Drakeling (Shoulder Dragon)"),
             ("ShoulderDragon_Character_BP_Winter_C", "Winter Drakeling (Shoulder Dragon)"),
             ("ShoulderDragon_Character_BP_C", "Drakeling (Base Shoulder Dragon)"),
+            ("Ghost_ShoulderDragon_Character_BP_Spring_C", "Spring Drakeling (Ghost Variant)"),
+            ("Ghost_ShoulderDragon_Character_BP_Summer_C", "Summer Drakeling (Ghost Variant)"),
+            ("Ghost_ShoulderDragon_Character_BP_Autumn_C", "Autumn Drakeling (Ghost Variant)"),
+            ("Ghost_ShoulderDragon_Character_BP_Winter_C", "Winter Drakeling (Ghost Variant)"),
             ("Thrall_Character_BP_Fighter_C", "Lost Colony Thrall (Fighter)"),
             ("Thrall_Character_BP_Soldier_C", "Lost Colony Thrall (Soldier)"),
-            ("Thrall_Character_BP_Cultist_C", "Lost Colony Thrall (Cultist)")
+            ("Thrall_Character_BP_Cultist_C", "Lost Colony Thrall (Cultist)"),
+            ("Thrall_Character_BP_Harvester_C", "Lost Colony Thrall (Harvester)"),
+            ("Thrall_Character_BP_Tamer_C", "Lost Colony Thrall (Tamer)"),
+            ("Neophyte_Character_BP_C", "Lost Colony Neophyte")
         ]
     },
     "DRAGONTOPIA": {
         "title": "Dragontopia Expansion DLC",
         "description": "Dragontopia Expansion DLC Dragons & Beasts",
         "classes": [
+            ("Draco_Character_BP_C", "Draco (Base Dragon - Official DevKit Class)"),
             ("Umbra_Character_BP_C", "Eclipsar Umbra (Shadow Dragon)"),
             ("Eclipsar_Character_BP_C", "Eclipsar (Alt Class Reference)"),
             ("Lumina_Character_BP_C", "Lumina (Light Dragon)"),
-            ("Gargantar_Character_BP_C", "Gargantar (Belly Beast)")
+            ("Gargantar_Character_BP_C", "Gargantar (Belly Beast Alias)")
         ]
     },
     "TIDES_OF_FORTUNE": {
         "title": "Tides of Fortune Expansion DLC",
         "description": "Tides of Fortune Naval Expansion Creatures",
         "classes": [
-            ("Tidepup_Character_BP_C", "Tidepup (Salamander Companion)"),
-            ("Parrot_Character_BP_C", "Parrot (Treasure Seeker)")
+            ("Axolotl_Character_BP_C", "Tidepup (Axolotl - Official DevKit Class)"),
+            ("Axolotl_Large_Character_BP_C", "Tidepup Large (Axolotl Large - DevKit Class)"),
+            ("Axolotl_Small_Character_BP_C", "Tidepup Small (Axolotl Small - DevKit Class)"),
+            ("Tidepup_Character_BP_C", "Tidepup (Direct Alias)"),
+            ("Parrot_Character_BP_C", "Parrot (Treasure Seeker)"),
+            ("Palaeoctopus_Character_BP_C", "Palaeoctopus (Aquatic Expansion)"),
+            ("MegaPalaeoctopus_Character_BP_C", "Palaeoctopus (Alpha / Mega Variant)")
         ]
     },
     "FANTASTIC_TAMES": {
         "title": "Fantastic Tames (Paid Micro-DLC)",
         "description": "Fantastic Tames Paid Micro-DLC Creatures",
         "classes": [
-            ("SpiritBear_Character_BP_C", "Elderclaw (Spirit Bear - Fantastic Tames)"),
+            ("SpiritBear_Character_BP_C", "Elderclaw (Spirit Bear - Official DevKit Class)"),
             ("Elderclaw_Character_BP_C", "Elderclaw (Direct Alias)"),
-            ("FireLion_Character_BP_C", "Pyromane (Fire Lion - Official ASA Class)"),
+            ("FireLion_Character_BP_C", "Pyromane (Fire Lion - Official DevKit Class)"),
             ("FireLion_Character_BP_Thrall_C", "Pyromane Thrall (Lost Colony Variant)"),
             ("Pyromane_Character_BP_C", "Pyromane (Direct Alias)"),
-            ("DarkPegasus_Character_BP_C", "Dreadmare (Dark Pegasus - Official ASA Class)"),
+            ("DarkPegasus_Character_BP_C", "Dreadmare (Dark Pegasus - Official DevKit Class)"),
             ("Dreadmare_Character_BP_C", "Dreadmare (Direct Alias)"),
-            ("Jackalope_Character_BP_C", "Burrowbuck (Jackalope - Official ASA Class)"),
+            ("Jackalope_Character_BP_C", "Burrowbuck (Jackalope - Official DevKit Class)"),
             ("Burrowbuck_Character_BP_C", "Burrowbuck (Direct Alias)"),
             ("Cerberax_Character_BP_C", "Cerberax (Three-headed Hound)"),
             ("Enigmasaur_Character_BP_C", "Enigmasaur")
@@ -94,12 +110,14 @@ CREATURE_DATABASE = {
         "description": "Bob's Tall Tales Adventure Pass Creatures",
         "classes": [
             ("Oasisaur_Character_BP_C", "Oasisaur (Frontier Showdown)"),
-            ("JumpingSpider_Character_BP_C", "Cosmo (Jumping Spider - Official ASA Class)"),
+            ("Bison_Character_BP_C", "Bison (Frontier Showdown - Official DevKit Class)"),
+            ("JumpingSpider_Character_BP_C", "Cosmo (Jumping Spider - Official DevKit Class)"),
             ("Cosmo_Character_BP_C", "Cosmo (Direct Alias)"),
-            ("HelperBot_Character_BP_C", "Sir-5rM-8 (Helper Bot - Official ASA Class)"),
+            ("HelperBot_Character_BP_C", "Sir-5rM-8 (Helper Bot - Official DevKit Class)"),
             ("Sir5rM8_Character_BP_C", "Sir-5rM-8 (Direct Alias)"),
-            ("Doggo_Character_BP_C", "Armadoggo (Doggo - Official ASA Class)"),
-            ("Armadoggo_Character_BP_C", "Armadoggo (Direct Alias)")
+            ("Doggo_Character_BP_C", "Armadoggo (Doggo - Official DevKit Class)"),
+            ("Armadoggo_Character_BP_C", "Armadoggo (Direct Alias)"),
+            ("Zeppelin_Character_BP_C", "Zeppelin (Steampunk Airship)")
         ]
     },
     "ASA_STORY_VOTES": {
@@ -107,12 +125,18 @@ CREATURE_DATABASE = {
         "description": "ASA Official Community Votes & Base Game Newcomers",
         "classes": [
             ("Fasola_Character_BP_C", "Fasolasuchus (Scorched Earth)"),
+            ("Fasola_Character_BP_Aberrant_C", "Fasolasuchus Aberrant (Official DevKit Class)"),
             ("Gigantoraptor_Character_BP_C", "Gigantoraptor (The Island / Center)"),
+            ("Gigantoraptor_Character_BP_Aberrant_C", "Gigantoraptor Aberrant (Official DevKit Class)"),
+            ("Ghost_Gigantoraptor_Character_BP_C", "Gigantoraptor Ghost (Official DevKit Class)"),
             ("Shastasaurus_Character_BP_C", "Shastasaurus (The Center)"),
             ("YiLing_Character_BP_C", "Yi Ling (Aberration)"),
+            ("Ghost_YiLing_Character_BP_C", "Yi Ling Ghost (Official DevKit Class)"),
             ("Dreadnoughtus_Character_BP_C", "Dreadnoughtus (Extinction)"),
-            ("Palaeoctopus_Character_BP_C", "Palaeoctopus (Aquatic Expansion)"),
-            ("Boaratos_Character_BP_C", "Boaratos (Astraeos Map)")
+            ("Boaratos_Character_BP_C", "Boaratos (Astraeos Map)"),
+            ("MegaBoaratos_Character_BP_C", "Boaratos Alpha / Mega (Astraeos Map)"),
+            ("GrandTortugar_Character_BP_C", "Grand Tortugar (Official DevKit Class)"),
+            ("Maelizard_Character_BP_C", "Maelizard (Official DevKit Class)")
         ]
     },
     "GARUGA_ADDITIONS": {
@@ -122,6 +146,7 @@ CREATURE_DATABASE = {
             ("Xiphactinus_Character_BP_ASA_C", "Xiphactinus (Official ASA Class)"),
             ("Xiphactinus_Character_BP_C", "Xiphactinus (Additions Port Class)"),
             ("Ceratosaurus_Character_BP_ASA_C", "Ceratosaurus (Official ASA Class)"),
+            ("Ghost_Ceratosaurus_Character_BP_ASA_C", "Ceratosaurus Ghost (Official ASA Class)"),
             ("CeratosaurusAA_Character_BP_C", "Ceratosaurus (Additions Mod Class)"),
             ("Ceratosaurus_Character_BP_C", "Ceratosaurus (Direct Alias)"),
             ("DeinosuchusASA_Character_BP_C", "Deinosuchus (Official ASA Class)"),
@@ -133,13 +158,14 @@ CREATURE_DATABASE = {
             ("Brachiosaurus_Character_BP_C", "Brachiosaurus (Additions Class)"),
             ("Brachiosaurus_Character_BP_ASA_C", "Brachiosaurus (Official ASA Class)"),
             ("BrachiosaurusAA_Character_BP_C", "Brachiosaurus (Additions Mod Class)"),
-            ("Helicoprion_Character_BP_C", "Helicoprion (Additions Class)"),
-            ("Helicoprion_Character_BP_ASA_C", "Helicoprion (Official ASA Class)"),
-            ("Acrocanthosaurus_Character_BP_C", "Acrocanthosaurus (Additions Class)"),
-            ("Acrocanthosaurus_Character_BP_ASA_C", "Acrocanthosaurus (Official ASA Class)"),
+            ("Helicoprion_Character_BP_C", "Helicoprion (Additions / Official Class)"),
+            ("Helicoprion_Character_BP_ASA_C", "Helicoprion (Official ASA Alt)"),
+            ("Acrocanthosaurus_Character_BP_C", "Acrocanthosaurus (Additions / Official Class)"),
+            ("Acrocanthosaurus_Character_BP_ASA_C", "Acrocanthosaurus (Official ASA Alt)"),
             ("AcrocanthosaurusAA_Character_BP_C", "Acrocanthosaurus (Additions Mod Class)"),
-            ("Concavenator_Character_BP_C", "Concavenator (Additions Class)"),
-            ("Concavenator_Character_BP_ASA_C", "Concavenator (Official ASA Class)"),
+            ("Concavenator_Character_BP_C", "Concavenator (Additions / Official Class)"),
+            ("Concavenator_Character_BP_Aberrant_C", "Concavenator Aberrant (Official DevKit Class)"),
+            ("Concavenator_Character_BP_ASA_C", "Concavenator (Official ASA Alt)"),
             ("ConcavenatorAA_Character_BP_C", "Concavenator (Additions Mod Class)")
         ]
     }
@@ -431,8 +457,8 @@ def interactive_main_menu():
 
     while True:
         print_banner(target_file)
-        print(" Please choose an option:\n")
-        print("   [1] Block ALL (Pure ASE - Full Purge of all 46 modern creatures)")
+        total_dinos = len(get_all_classes())
+        print(f"   [1] Block ALL (Pure ASE - Full Purge of all {total_dinos} creature classes)")
         print("   [2] Select Which to Block (Category & Creature Fine-Tuning)")
         print("   [3] Remove All Blocks (Restore Official Vanilla Spawns)")
         print("   [4] Change Game.ini File Location")
@@ -513,7 +539,7 @@ def main():
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Headless mode: Block all 46 modern creatures without prompting"
+        help="Headless mode: Block all modern creatures without prompting"
     )
     parser.add_argument(
         "--allow",

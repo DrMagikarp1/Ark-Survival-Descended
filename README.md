@@ -55,7 +55,7 @@ python3 ase_purist_injector.py
 ```
 
 ### Interactive Menu Features:
-1. **[1] Block ALL:** One-click pure ASE setup (blocks all 46 post-launch creatures).
+1. **[1] Block ALL:** One-click pure ASE setup (blocks all modern creatures and variants).
 2. **[2] Select Which to Block:** 
    * View all 8 categories (Deinotherium, Lost Colony, Dragontopia, Tides of Fortune, Fantastic Tames, Bob's Tall Tales, Community Votes, Garuga Additions).
    * Toggle whole categories with `t <#>` (e.g. `t 6` to toggle Bob's Tall Tales).
