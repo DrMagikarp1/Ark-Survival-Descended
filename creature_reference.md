@@ -1,4 +1,4 @@
-# ARK: Survival Ascended (ASA) Purist Mod - Creature Reference Sheet
+# ARK: Survival Ascended (ASA) - Ark Survival Descended Creature Reference Sheet
 
 This document catalogs the exact character Blueprint classes for creatures introduced during **ARK: Survival Ascended (ASA)** and **Garuga's ARK Additions**, as well as legacy **ARK: Survival Evolved (ASE)** creatures that must remain unblocked.
 
@@ -6,7 +6,7 @@ This document catalogs the exact character Blueprint classes for creatures intro
 
 ## 1. ASA-Exclusive Creatures (Blocked by Default)
 
-These creatures were newly created and introduced for *ARK: Survival Ascended* (launching October 2023 onwards). In pure ASE mode, these will be intercepted and prevented from spawning.
+These creatures were newly created and introduced for *ARK: Survival Ascended* (launching October 2023 onwards). Under Ark Survival Descended, these will be intercepted and prevented from spawning.
 
 | Common Name | Blueprint Class Name | Content Source / DLC | Default Action |
 | :--- | :--- | :--- | :--- |
@@ -26,7 +26,7 @@ These creatures were newly created and introduced for *ARK: Survival Ascended* (
 
 ## 2. Garuga123's ARK Additions (Officialized in ASA)
 
-These creatures originated as popular third-party mods in ASE and were integrated by Studio Wildcard into official base-game ASA releases. They are blocked by default in pure ASE mode, but can be individually or globally toggled via `.ini`.
+These creatures originated as popular third-party mods in ASE and were integrated by Studio Wildcard into official base-game ASA releases. They are blocked by default in Ark Survival Descended, but can be individually or globally toggled via `.ini`.
 
 | Common Name | Blueprint Class Name | Original Source | Default Action |
 | :--- | :--- | :--- | :--- |
