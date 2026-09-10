@@ -46,20 +46,28 @@ The **Ark Survival Descended** mod eliminates modern power-creep and paid DLC cr
 
 ---
 
-## ⚙️ Configuration Quick Start
+## ⚙️ Configuration & Usage
 
-Add the `[ArkSurvivalDescended]` header to your `GameUserSettings.ini`:
+The script features an **Interactive Terminal UI** with zero external dependencies (pure Python 3 standard library):
 
-```ini
-[ArkSurvivalDescended]
-; Allow Cosmo to spawn:
-AllowCosmo=True
-
-; Allow Garuga's Ceratosaurus:
-AllowCeratosaurus=True
+```bash
+python3 ase_purist_injector.py
 ```
 
-After modifying settings, run the following in the admin console to apply changes immediately:
+### Interactive Menu Features:
+1. **[1] Block ALL:** One-click pure ASE setup (blocks all 46 post-launch creatures).
+2. **[2] Select Which to Block:** 
+   * View all 8 categories (Deinotherium, Lost Colony, Dragontopia, Tides of Fortune, Fantastic Tames, Bob's Tall Tales, Community Votes, Garuga Additions).
+   * Toggle whole categories with `t <#>` (e.g. `t 6` to toggle Bob's Tall Tales).
+   * Drill into any category to toggle individual dinos (e.g. unblock *Cosmo* while keeping everything else blocked).
+   * Press `s` to save and inject!
+3. **[3] Remove All Blocks:** Instant clean rollback to restore official vanilla spawns.
+4. **[4] Change Game.ini Location:** Drag-and-drop or enter a custom path if not in the default directory.
+
+---
+
+### In-Game Step:
+After running the script, boot up ARK and run this in the console (`Tab` or `~`):
 ```text
 admincheat DestroyWildDinos
 ```

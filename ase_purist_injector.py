@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
-ARK: Survival Ascended (ASA) - ASE Purist Game.ini Injector
+ARK: Survival Ascended (ASA) - ASE Purist Game.ini Manager
 ===========================================================
 Strips post-launch ASA creatures, paid DLCs, and unofficial expansions
 back to classic ARK: Survival Evolved (ASE) standards using native
 Unreal Engine NPCReplacements in Game.ini.
 
-Legacy ASE creatures (Desmodus, Sinomacrops, Wyverns, etc.) remain
-completely untouched and are allowed to spawn anywhere (including modded maps).
+Features an interactive terminal menu:
+  1) Block All (Pure ASE - Full Purge)
+  2) Select Which to Block (Category & Dino Fine-Tuning)
+  3) Remove All Blocks (Restore Vanilla Spawns)
 """
 
 import sys
@@ -22,50 +24,16 @@ from pathlib import Path
 # ==============================================================================
 CREATURE_DATABASE = {
     "DEINOTHERIUM": {
+        "title": "The Nemesis (Deinotherium)",
         "description": "Deinotherium (Garuga / Standalone Mod - User's Nemesis!)",
-        "default_block": True,
         "classes": [
             ("DeinotheriumASA_Character_BP_C", "Deinotherium (ASA Official/Mod)"),
             ("Deinotherium_Character_BP_C", "Deinotherium (ASE/Legacy Mod Port)")
         ]
     },
-    "ASA_STORY_VOTES": {
-        "description": "ASA Official Community Votes & Base Game Newcomers",
-        "default_block": True,
-        "classes": [
-            ("Fasola_Character_BP_C", "Fasolasuchus (Scorched Earth)"),
-            ("Gigantoraptor_Character_BP_C", "Gigantoraptor (The Island / Center)"),
-            ("Shastasaurus_Character_BP_C", "Shastasaurus (The Center)"),
-            ("YiLing_Character_BP_C", "Yi Ling (Aberration)"),
-            ("Dreadnoughtus_Character_BP_C", "Dreadnoughtus (Extinction)"),
-            ("Palaeoctopus_Character_BP_C", "Palaeoctopus (Aquatic Expansion)")
-        ]
-    },
-    "BOBS_TALL_TALES": {
-        "description": "Bob's Tall Tales Adventure Pass Creatures",
-        "default_block": True,
-        "classes": [
-            ("Oasisaur_Character_BP_C", "Oasisaur (Frontier Showdown)"),
-            ("Cosmo_Character_BP_C", "Cosmo (Steampunk Ascent)"),
-            ("Sir5rM8_Character_BP_C", "Sir-5rM-8 Automaton (Steampunk Ascent)"),
-            ("Armadoggo_Character_BP_C", "Armadoggo (Wasteland War)")
-        ]
-    },
-    "FANTASTIC_TAMES": {
-        "description": "Fantastic Tames Paid Micro-DLC Creatures",
-        "default_block": True,
-        "classes": [
-            ("SpiritBear_Character_BP_C", "Elderclaw (Spirit Bear)"),
-            ("Pyromane_Character_BP_C", "Pyromane (Fire Lion)"),
-            ("Dreadmare_Character_BP_C", "Dreadmare (Dark Pegasus)"),
-            ("Cerberax_Character_BP_C", "Cerberax (Three-headed Hound)"),
-            ("Burrowbuck_Character_BP_C", "Burrowbuck"),
-            ("Enigmasaur_Character_BP_C", "Enigmasaur")
-        ]
-    },
     "LOST_COLONY": {
+        "title": "Lost Colony Expansion DLC",
         "description": "Lost Colony Expansion DLC Creatures & Thralls",
-        "default_block": True,
         "classes": [
             ("SnowDragon_Character_BP_C", "Aureliax (Snow Dragon)"),
             ("Cryolophosaurus_Character_BP_C", "Cryolophosaurus"),
@@ -87,8 +55,8 @@ CREATURE_DATABASE = {
         ]
     },
     "DRAGONTOPIA": {
+        "title": "Dragontopia Expansion DLC",
         "description": "Dragontopia Expansion DLC Dragons & Beasts",
-        "default_block": True,
         "classes": [
             ("Umbra_Character_BP_C", "Eclipsar Umbra (Shadow Dragon)"),
             ("Eclipsar_Character_BP_C", "Eclipsar (Alt Class Reference)"),
@@ -97,23 +65,51 @@ CREATURE_DATABASE = {
         ]
     },
     "TIDES_OF_FORTUNE": {
+        "title": "Tides of Fortune Expansion DLC",
         "description": "Tides of Fortune Naval Expansion Creatures",
-        "default_block": True,
         "classes": [
             ("Tidepup_Character_BP_C", "Tidepup (Salamander Companion)"),
             ("Parrot_Character_BP_C", "Parrot (Treasure Seeker)")
         ]
     },
-    "ASTRAEOS": {
-        "description": "Astraeos Expansion Additions",
-        "default_block": True,
+    "FANTASTIC_TAMES": {
+        "title": "Fantastic Tames (Paid Micro-DLC)",
+        "description": "Fantastic Tames Paid Micro-DLC Creatures",
         "classes": [
-            ("Boaratos_Character_BP_C", "Boaratos")
+            ("SpiritBear_Character_BP_C", "Elderclaw (Spirit Bear)"),
+            ("Pyromane_Character_BP_C", "Pyromane (Fire Lion)"),
+            ("Dreadmare_Character_BP_C", "Dreadmare (Dark Pegasus)"),
+            ("Cerberax_Character_BP_C", "Cerberax (Three-headed Hound)"),
+            ("Burrowbuck_Character_BP_C", "Burrowbuck"),
+            ("Enigmasaur_Character_BP_C", "Enigmasaur")
+        ]
+    },
+    "BOBS_TALL_TALES": {
+        "title": "Bob's Tall Tales (Adventure Pass)",
+        "description": "Bob's Tall Tales Adventure Pass Creatures",
+        "classes": [
+            ("Oasisaur_Character_BP_C", "Oasisaur (Frontier Showdown)"),
+            ("Cosmo_Character_BP_C", "Cosmo (Steampunk Ascent)"),
+            ("Sir5rM8_Character_BP_C", "Sir-5rM-8 Automaton (Steampunk Ascent)"),
+            ("Armadoggo_Character_BP_C", "Armadoggo (Wasteland War)")
+        ]
+    },
+    "ASA_STORY_VOTES": {
+        "title": "ASA Community Votes & Story Newcomers",
+        "description": "ASA Official Community Votes & Base Game Newcomers",
+        "classes": [
+            ("Fasola_Character_BP_C", "Fasolasuchus (Scorched Earth)"),
+            ("Gigantoraptor_Character_BP_C", "Gigantoraptor (The Island / Center)"),
+            ("Shastasaurus_Character_BP_C", "Shastasaurus (The Center)"),
+            ("YiLing_Character_BP_C", "Yi Ling (Aberration)"),
+            ("Dreadnoughtus_Character_BP_C", "Dreadnoughtus (Extinction)"),
+            ("Palaeoctopus_Character_BP_C", "Palaeoctopus (Aquatic Expansion)"),
+            ("Boaratos_Character_BP_C", "Boaratos (Astraeos Map)")
         ]
     },
     "GARUGA_ADDITIONS": {
+        "title": "Garuga's ARK Additions (Official ASA)",
         "description": "Garuga123's ARK Additions (Official ASA Base Game Integrations)",
-        "default_block": True,
         "classes": [
             ("Ceratosaurus_Character_BP_C", "Ceratosaurus"),
             ("Deinosuchus_Character_BP_C", "Deinosuchus"),
@@ -133,6 +129,8 @@ BLOCK_MARKER_END   = "; >>> ASE_PURIST_INJECTOR_END <<<"
 
 # Common default install paths for ASA Game.ini
 POSSIBLE_PATHS = [
+    # Local relative directory (drag-and-drop or run in server folder)
+    Path("./Game.ini"),
     # Windows Singleplayer / Client
     Path("C:/Program Files (x86)/Steam/steamapps/common/ARK Survival Ascended/ShooterGame/Saved/Config/Windows/Game.ini"),
     # Windows Dedicated Server
@@ -140,47 +138,53 @@ POSSIBLE_PATHS = [
     # Linux Proton / Steam Deck Client
     Path.home() / ".local/share/Steam/steamapps/compatdata/2399830/pfx/drive_c/Program Files (x86)/Steam/steamapps/common/ARK Survival Ascended/ShooterGame/Saved/Config/Windows/Game.ini",
     # Linux Native / Wine Dedicated Server
-    Path.home() / ".local/share/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved/Config/WindowsServer/Game.ini",
-    # Local relative directory (testing)
-    Path("./Game.ini")
+    Path.home() / ".local/share/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved/Config/WindowsServer/Game.ini"
 ]
 
 
 def find_game_ini():
     """Attempt to locate Game.ini automatically across standard OS paths."""
     for p in POSSIBLE_PATHS:
-        if p.is_file():
-            return p
+        try:
+            if p.is_file():
+                return p.resolve()
+        except Exception:
+            continue
     return None
 
 
-def generate_replacement_block(allowed_creatures=None):
-    """
-    Generate the formatted NPCReplacements text block.
-    allowed_creatures: set/list of class names that the user explicitly wants to allow (whitelist).
-    """
-    if allowed_creatures is None:
-        allowed_creatures = set()
+def get_all_classes():
+    """Return a set of all creature classes in the database."""
+    classes = set()
+    for cat in CREATURE_DATABASE.values():
+        for cls, _ in cat["classes"]:
+            classes.add(cls)
+    return classes
 
+
+def generate_replacement_block(blocked_classes: set):
+    """
+    Generate the formatted NPCReplacements text block for all blocked_classes.
+    """
     lines = [
         BLOCK_MARKER_START,
-        "; Generated by ASE Purist Injector on " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "; Generated by ASE Purist Manager on " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "; Strips ASA-exclusive, paid DLC, and unofficial expansion creatures.",
         "; Legacy ASE creatures (Desmodus, Wyverns, Sinomacrops, etc.) spawn normally!"
     ]
 
     total_blocked = 0
-    for category_key, category_data in CREATURE_DATABASE.items():
+    for cat_key, cat_data in CREATURE_DATABASE.items():
         cat_lines = []
-        for class_name, display_name in category_data["classes"]:
-            if class_name in allowed_creatures:
-                cat_lines.append(f"; [ALLOWED BY USER] {display_name} ({class_name})")
-            else:
+        for class_name, display_name in cat_data["classes"]:
+            if class_name in blocked_classes:
                 cat_lines.append(f'NPCReplacements=(FromClassName="{class_name}",ToClassName="")')
                 total_blocked += 1
+            else:
+                cat_lines.append(f'; [ALLOWED] {display_name} ({class_name})')
 
         if cat_lines:
-            lines.append(f"\n; --- {category_data['description']} ---")
+            lines.append(f"\n; --- {cat_data['description']} ---")
             lines.extend(cat_lines)
 
     lines.append(f"\n{BLOCK_MARKER_END}\n")
@@ -189,24 +193,20 @@ def generate_replacement_block(allowed_creatures=None):
 
 def inject_into_game_ini(file_path: Path, replacement_block: str):
     """Safely inject the replacement block into Game.ini."""
-    # 1. Create a safe backup
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     backup_path = file_path.with_suffix(f".ini.bak_{timestamp}")
     shutil.copy2(file_path, backup_path)
-    print(f"[✓] Backup created at: {backup_path}")
+    print(f"\n[✓] Safe backup created at: {backup_path.name}")
 
-    # 2. Read existing content
     with open(file_path, "r", encoding="utf-8", errors="replace") as f:
         content = f.read()
 
-    # 3. Strip any previous injection block if present
+    # Strip existing block if present
     if BLOCK_MARKER_START in content and BLOCK_MARKER_END in content:
-        print("[i] Found previous ASE Purist injection block. Replacing it...")
         start_idx = content.find(BLOCK_MARKER_START)
         end_idx = content.find(BLOCK_MARKER_END) + len(BLOCK_MARKER_END)
         content = content[:start_idx].rstrip() + "\n\n" + content[end_idx:].lstrip()
 
-    # 4. Inject under [/script/shootergame.shootergamemode]
     header_lower = SECTION_HEADER.lower()
     content_lower = content.lower()
 
@@ -217,18 +217,21 @@ def inject_into_game_ini(file_path: Path, replacement_block: str):
             header_end = len(content)
         new_content = content[:header_end] + "\n" + replacement_block + content[header_end:]
     else:
-        print(f"[i] Section header {SECTION_HEADER} not found. Appending to end of file...")
         new_content = content.rstrip() + "\n\n" + SECTION_HEADER + "\n" + replacement_block
 
-    # 5. Write back to file
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    print(f"[✓] Successfully injected into: {file_path}")
+    print(f"[✓] Successfully injected spawn replacements into: {file_path}")
 
 
 def remove_from_game_ini(file_path: Path):
     """Remove the injected block to restore original game spawns."""
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_path = file_path.with_suffix(f".ini.bak_{timestamp}")
+    shutil.copy2(file_path, backup_path)
+    print(f"\n[✓] Safe backup created at: {backup_path.name}")
+
     with open(file_path, "r", encoding="utf-8", errors="replace") as f:
         content = f.read()
 
@@ -241,69 +244,295 @@ def remove_from_game_ini(file_path: Path):
             f.write(new_content)
         print(f"[✓] Successfully removed ASE Purist blocks from: {file_path}")
     else:
-        print("[!] No ASE Purist block found in this file.")
+        print("[!] No ASE Purist block was found in this file.")
 
+
+# ==============================================================================
+# INTERACTIVE TERMINAL MENUS
+# ==============================================================================
+
+def print_banner(target_file):
+    print("=" * 66)
+    print("          🦖 ARK: Survival Ascended - ASE Purist Manager 🦕")
+    print("=" * 66)
+    target_str = str(target_file) if target_file else "Not Selected"
+    print(f" Target Game.ini: {target_str}")
+    print("=" * 66)
+
+
+def edit_creature_category_menu(cat_key, cat_data, blocked_classes):
+    """Submenu for toggling individual creatures inside a category."""
+    while True:
+        print("\n" + "-" * 66)
+        print(f" Category: {cat_data['title']}")
+        print(" Enter creature number to toggle between [BLOCKED] and [ALLOWED]")
+        print("-" * 66)
+
+        for idx, (cls, name) in enumerate(cat_data["classes"], 1):
+            status = "[BLOCKED]" if cls in blocked_classes else "[ALLOWED]"
+            print(f"   [{idx:2d}] {status:9s} {name}")
+
+        print("-" * 66)
+        print("   [A] Allow ALL in this category")
+        print("   [B] Block ALL in this category")
+        print("   [D] Done (Return to Categories)")
+        print("-" * 66)
+
+        choice = input("Choice: ").strip().lower()
+
+        if choice == 'd':
+            break
+        elif choice == 'a':
+            for cls, _ in cat_data["classes"]:
+                blocked_classes.discard(cls)
+            print(" [✓] All creatures in this category set to ALLOWED.")
+        elif choice == 'b':
+            for cls, _ in cat_data["classes"]:
+                blocked_classes.add(cls)
+            print(" [✓] All creatures in this category set to BLOCKED.")
+        elif choice.isdigit():
+            idx = int(choice) - 1
+            if 0 <= idx < len(cat_data["classes"]):
+                cls, name = cat_data["classes"][idx]
+                if cls in blocked_classes:
+                    blocked_classes.remove(cls)
+                    print(f" [✓] {name} is now ALLOWED.")
+                else:
+                    blocked_classes.add(cls)
+                    print(f" [✓] {name} is now BLOCKED.")
+            else:
+                print(" [!] Invalid creature number.")
+        else:
+            print(" [!] Invalid option.")
+
+
+def customize_blocks_menu(target_file, blocked_classes):
+    """Submenu for browsing and toggling creature categories."""
+    cat_keys = list(CREATURE_DATABASE.keys())
+
+    while True:
+        total_dinos = len(get_all_classes())
+        blocked_count = len(blocked_classes)
+
+        print("\n" + "=" * 66)
+        print(f" SELECT WHICH TO BLOCK (Currently Blocking {blocked_count}/{total_dinos} Creatures)")
+        print("=" * 66)
+        print(" Enter a category number to fine-tune individual creatures:")
+
+        for idx, key in enumerate(cat_keys, 1):
+            cat = CREATURE_DATABASE[key]
+            cat_classes = [c[0] for c in cat["classes"]]
+            cat_blocked = sum(1 for c in cat_classes if c in blocked_classes)
+            total_in_cat = len(cat_classes)
+
+            if cat_blocked == total_in_cat:
+                status = "[BLOCKED]"
+            elif cat_blocked == 0:
+                status = "[ALLOWED]"
+            else:
+                status = f"[{cat_blocked}/{total_in_cat} BLOCKED]"
+
+            print(f"   [{idx}] {cat['title']:<38} -> {status}")
+
+        print("-" * 66)
+        print(" Actions:")
+        print("   [#]     Enter category number (1-8) to fine-tune creatures")
+        print("   [T #]   Toggle entire category (e.g. 't 6' to toggle Bob's Tall Tales)")
+        print("   [A]     Allow ALL creatures (Clear blacklist)")
+        print("   [B]     Block ALL creatures (Full purge)")
+        print("   [S]     SAVE & APPLY to Game.ini now")
+        print("   [X]     Cancel / Discard changes and return to Main Menu")
+        print("-" * 66)
+
+        raw = input("Choice: ").strip()
+        cmd = raw.lower()
+
+        if cmd == 'x':
+            print(" [i] Changes discarded.")
+            break
+        elif cmd == 'a':
+            blocked_classes.clear()
+            print(" [✓] Cleared all blocks. (All creatures allowed).")
+        elif cmd == 'b':
+            blocked_classes.update(get_all_classes())
+            print(" [✓] Set all creatures to BLOCKED.")
+        elif cmd == 's':
+            block_text, count = generate_replacement_block(blocked_classes)
+            inject_into_game_ini(target_file, block_text)
+            print_completion_notice(count)
+            break
+        elif cmd.startswith('t ') or (len(cmd) > 1 and cmd[0] == 't'):
+            parts = cmd.split()
+            cat_num = parts[1] if len(parts) > 1 else cmd[1:]
+            if cat_num.isdigit():
+                idx = int(cat_num) - 1
+                if 0 <= idx < len(cat_keys):
+                    key = cat_keys[idx]
+                    cat = CREATURE_DATABASE[key]
+                    cat_classes = [c[0] for c in cat["classes"]]
+                    # If all or most are blocked, unblock all. Otherwise, block all.
+                    if any(c in blocked_classes for c in cat_classes):
+                        for c in cat_classes:
+                            blocked_classes.discard(c)
+                        print(f" [✓] {cat['title']} set to ALLOWED.")
+                    else:
+                        for c in cat_classes:
+                            blocked_classes.add(c)
+                        print(f" [✓] {cat['title']} set to BLOCKED.")
+                else:
+                    print(" [!] Invalid category number.")
+        elif raw.isdigit():
+            idx = int(raw) - 1
+            if 0 <= idx < len(cat_keys):
+                key = cat_keys[idx]
+                edit_creature_category_menu(key, CREATURE_DATABASE[key], blocked_classes)
+            else:
+                print(" [!] Invalid category number.")
+        else:
+            print(" [!] Invalid command. Type number, 't <#>', 's', or 'x'.")
+
+
+def print_completion_notice(count):
+    print("\n" + "=" * 66)
+    print(" ✨ ALL DONE! SPATIAL INJECTION COMPLETE! ✨")
+    print(f" Injected blocks for {count} non-ASE creature classes.")
+    print(" Legacy creatures (Desmodus, Sinomacrops, Wyverns, etc.) will spawn!")
+    print("\n NEXT STEP:")
+    print(" 1. Start your game or server.")
+    print(" 2. Open the in-game console (Tab or ~) and run:")
+    print("    admincheat DestroyWildDinos")
+    print("=" * 66 + "\n")
+
+
+def interactive_main_menu():
+    target_file = find_game_ini()
+
+    while True:
+        print_banner(target_file)
+        print(" Please choose an option:\n")
+        print("   [1] Block ALL (Pure ASE - Full Purge of all 46 modern creatures)")
+        print("   [2] Select Which to Block (Category & Creature Fine-Tuning)")
+        print("   [3] Remove All Blocks (Restore Official Vanilla Spawns)")
+        print("   [4] Change Game.ini File Location")
+        print("   [5] Exit\n")
+        print("=" * 66)
+
+        choice = input("Select an option (1-5): ").strip()
+
+        if choice == '1':
+            if not target_file:
+                target_file = prompt_for_path()
+                if not target_file:
+                    continue
+            all_classes = get_all_classes()
+            block_text, count = generate_replacement_block(all_classes)
+            inject_into_game_ini(target_file, block_text)
+            print_completion_notice(count)
+            input("Press Enter to continue...")
+
+        elif choice == '2':
+            if not target_file:
+                target_file = prompt_for_path()
+                if not target_file:
+                    continue
+            # Default to all blocked when opening customization
+            blocked_classes = set(get_all_classes())
+            customize_blocks_menu(target_file, blocked_classes)
+            input("Press Enter to continue...")
+
+        elif choice == '3':
+            if not target_file:
+                target_file = prompt_for_path()
+                if not target_file:
+                    continue
+            remove_from_game_ini(target_file)
+            print("\n[i] Vanilla spawns restored.")
+            print("Don't forget to run 'admincheat DestroyWildDinos' in-game!")
+            input("Press Enter to continue...")
+
+        elif choice == '4':
+            target_file = prompt_for_path()
+
+        elif choice == '5':
+            print("\nExiting ASE Purist Manager. Happy surviving! 🦖")
+            sys.exit(0)
+
+        else:
+            print("\n[!] Invalid selection. Please enter a number from 1 to 5.")
+
+
+def prompt_for_path():
+    print("\n--- Enter Game.ini Location ---")
+    user_input = input("Drag-and-drop or type the full path to Game.ini: ").strip().strip('"').strip("'")
+    if not user_input:
+        return None
+    p = Path(user_input)
+    if p.is_file():
+        print(f"[✓] Loaded: {p.resolve()}")
+        return p.resolve()
+    else:
+        print(f"[ERROR] File not found at: {p}")
+        return None
+
+
+# ==============================================================================
+# MAIN ENTRY POINT
+# ==============================================================================
 
 def main():
     parser = argparse.ArgumentParser(
-        description="ARK: Survival Ascended - ASE Purist Game.ini Injector"
+        description="ARK: Survival Ascended - ASE Purist Game.ini Manager"
     )
     parser.add_argument(
         "file",
         nargs="?",
-        help="Path to Game.ini (optional; auto-detects if omitted)"
+        help="Path to Game.ini (optional; launches interactive menu if omitted)"
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Headless mode: Block all 46 modern creatures without prompting"
     )
     parser.add_argument(
         "--allow",
         nargs="*",
         default=[],
-        help="Class names of creatures you want to allow (e.g., --allow Cosmo_Character_BP_C)"
+        help="Headless mode: Class names of creatures to allow (whitelist)"
     )
     parser.add_argument(
         "--remove",
         action="store_true",
-        help="Remove previously injected ASE Purist lines from Game.ini"
+        help="Headless mode: Remove previously injected ASE Purist lines from Game.ini"
     )
 
     args = parser.parse_args()
 
-    # Determine file path
-    if args.file:
-        target_file = Path(args.file)
-    else:
-        print("[...] Searching for Game.ini in standard locations...")
-        target_file = find_game_ini()
-
-    if not target_file or not target_file.is_file():
-        print("[!] Could not automatically locate Game.ini.")
-        user_input = input("Please enter the full path to your Game.ini: ").strip().strip('"').strip("'")
-        target_file = Path(user_input)
-        if not target_file.is_file():
-            print(f"[ERROR] File not found: {target_file}")
+    # If any headless flags are used, run in non-interactive batch mode
+    if args.all or args.allow or args.remove:
+        target = Path(args.file) if args.file else find_game_ini()
+        if not target or not target.is_file():
+            print("[ERROR] Game.ini not found. Specify path: python ase_purist_injector.py <path>")
             sys.exit(1)
 
-    print(f"[✓] Selected target: {target_file}")
+        if args.remove:
+            remove_from_game_ini(target)
+            return
 
-    if args.remove:
-        remove_from_game_ini(target_file)
-        print("\nDon't forget to run 'admincheat DestroyWildDinos' in-game to repopulate!")
+        all_classes = get_all_classes()
+        allowed = set(args.allow)
+        blocked = all_classes - allowed
+
+        block_text, count = generate_replacement_block(blocked)
+        inject_into_game_ini(target, block_text)
+        print_completion_notice(count)
         return
 
-    allowed = set(args.allow)
-    block_text, count = generate_replacement_block(allowed_creatures=allowed)
-    print(f"[i] Prepared {count} creature blocks across {len(CREATURE_DATABASE)} categories.")
-
-    inject_into_game_ini(target_file, block_text)
-
-    print("\n" + "=" * 60)
-    print("ALL DONE! 🦖")
-    print(f"Blocked {count} non-ASE creature classes.")
-    print("Legacy creatures (Desmodus, Sinomacrops, Wyverns, etc.) will spawn normally!")
-    print("\nNEXT STEP:")
-    print("1. Start your game or server.")
-    print("2. Open the in-game console (Tab or ~) and run:")
-    print("   admincheat DestroyWildDinos")
-    print("=" * 60)
+    # Otherwise, launch the full interactive terminal menu!
+    try:
+        interactive_main_menu()
+    except (KeyboardInterrupt, EOFError):
+        print("\n\nOperation cancelled. Exiting.")
+        sys.exit(0)
 
 
 if __name__ == "__main__":
