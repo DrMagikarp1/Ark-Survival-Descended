@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ARK: Survival Ascended (ASA) Purist Mod - Master Creature Reference Sheet
+=======
+# ARK: Survival Ascended (ASA) - Ark Survival Descended Creature Reference Sheet
+>>>>>>> 972b396aa669b781753df5ad11604454f6b840aa
 
 This document catalogs all creatures that debuted in **ARK: Survival Ascended (ASA)**, paid expansions, community votes, Garuga's ARK Additions, and custom DLCs (Lost Colony, Dragontopia, Tides of Fortune, Astraeos) that are targeted for removal in Pure ASE mode, as well as the legacy **ARK: Survival Evolved (ASE)** creatures that must remain allowed everywhere.
 
@@ -6,7 +10,13 @@ This document catalogs all creatures that debuted in **ARK: Survival Ascended (A
 
 ## 1. Deinotherium (Target #1!)
 
+<<<<<<< HEAD
 | Creature | Blueprint Class Name | Source / Context | Action |
+=======
+These creatures were newly created and introduced for *ARK: Survival Ascended* (launching October 2023 onwards). Under Ark Survival Descended, these will be intercepted and prevented from spawning.
+
+| Common Name | Blueprint Class Name | Content Source / DLC | Default Action |
+>>>>>>> 972b396aa669b781753df5ad11604454f6b840aa
 | :--- | :--- | :--- | :--- |
 | **Deinotherium (ASA Official/Mod)** | `DeinotheriumASA_Character_BP_C` | Official ASA integration / Mod port | **BLOCK** |
 | **Deinotherium (Legacy Mod)** | `Deinotherium_Character_BP_C` | Original Additions mod port | **BLOCK** |
@@ -15,7 +25,13 @@ This document catalogs all creatures that debuted in **ARK: Survival Ascended (A
 
 ## 2. Lost Colony Expansion DLC
 
+<<<<<<< HEAD
 | Creature | Blueprint Class Name | Description | Action |
+=======
+These creatures originated as popular third-party mods in ASE and were integrated by Studio Wildcard into official base-game ASA releases. They are blocked by default in Ark Survival Descended, but can be individually or globally toggled via `.ini`.
+
+| Common Name | Blueprint Class Name | Original Source | Default Action |
+>>>>>>> 972b396aa669b781753df5ad11604454f6b840aa
 | :--- | :--- | :--- | :--- |
 | **Aureliax** | `SnowDragon_Character_BP_C` | Snow dragon / aerial predator | **BLOCK** |
 | **Cryolophosaurus** | `Cryolophosaurus_Character_BP_C` | Freezing theropod | **BLOCK** |

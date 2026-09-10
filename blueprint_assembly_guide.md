@@ -1,6 +1,6 @@
-# ARK: Survival Ascended (ASA) Purist Mod - Blueprint Assembly Guide
+# ARK: Survival Ascended (ASA) - Ark Survival Descended Blueprint Assembly Guide
 
-This guide provides the exact pin-by-pin instructions for creating the **ASE Purist Mod** inside the **ARK: Survival Ascended DevKit**. Keep this open while working in the DevKit.
+This guide provides the exact pin-by-pin instructions for creating the **Ark Survival Descended** mod inside the **ARK: Survival Ascended DevKit**. Keep this open while working in the DevKit.
 
 ---
 
@@ -10,26 +10,26 @@ Every ARK mod requires three fundamental files: a **PrimalGameData**, a **GameMo
 
 1. **Create Mod Folder:**
    - In the Content Browser, navigate to `Content/Mods/`.
-   - Right-click and create a new folder named `ASEPurist`.
-2. **Create `PrimalGameData_BP_ASEPurist`:**
-   - In your `ASEPurist` folder, right-click &rarr; **Blueprint Class**.
+   - Right-click and create a new folder named `ArkSurvivalDescended`.
+2. **Create `PrimalGameData_BP_ArkSurvivalDescended`:**
+   - In your `ArkSurvivalDescended` folder, right-click &rarr; **Blueprint Class**.
    - In the search box, search for `PrimalGameData_BP`.
-   - Select it as the parent class and name the asset: `PrimalGameData_BP_ASEPurist`.
-   - Open it, set `Mod Name` in the Details panel to **ASE Purist**, then Compile & Save.
-3. **Create `TestGameMode_ASEPurist`:**
-   - In your `ASEPurist` folder, right-click &rarr; **Blueprint Class**.
+   - Select it as the parent class and name the asset: `PrimalGameData_BP_ArkSurvivalDescended`.
+   - Open it, set `Mod Name` in the Details panel to **Ark Survival Descended**, then Compile & Save.
+3. **Create `TestGameMode_ArkSurvivalDescended`:**
+   - In your `ArkSurvivalDescended` folder, right-click &rarr; **Blueprint Class**.
    - Search for `TestGameMode`.
-   - Select it as the parent class and name the asset: `TestGameMode_ASEPurist`.
+   - Select it as the parent class and name the asset: `TestGameMode_ArkSurvivalDescended`.
    - Open it, go to the Details panel:
      - Find **Default Primal Game Data**.
-     - Set it to: `PrimalGameData_BP_ASEPurist`.
+     - Set it to: `PrimalGameData_BP_ArkSurvivalDescended`.
    - Compile & Save.
-4. **Create `ASEPurist_EntryLevel`:**
+4. **Create `ArkSurvivalDescended_EntryLevel`:**
    - Right-click &rarr; **Level** (or File &rarr; New Level &rarr; Empty Level).
-   - Name it: `ASEPurist_EntryLevel`.
+   - Name it: `ArkSurvivalDescended_EntryLevel`.
    - Open the level. In the top menu, open **Window &rarr; World Settings**.
    - In World Settings, find **GameMode Override**.
-   - Select: `TestGameMode_ASEPurist`.
+   - Select: `TestGameMode_ArkSurvivalDescended`.
    - Save the level.
 
 ---
@@ -38,9 +38,9 @@ Every ARK mod requires three fundamental files: a **PrimalGameData**, a **GameMo
 
 This invisible actor runs silently on the server/host, parses the `.ini` settings on startup, and sweeps away any blacklisted wild creatures.
 
-1. In `Content/Mods/ASEPurist/`, right-click &rarr; **Blueprint Class** &rarr; select **Actor**.
-2. Name it: `BP_ASE_SpawnInterceptor`.
-3. Open `BP_ASE_SpawnInterceptor`.
+1. In `Content/Mods/ArkSurvivalDescended/`, right-click &rarr; **Blueprint Class** &rarr; select **Actor**.
+2. Name it: `BP_ASD_SpawnInterceptor`.
+3. Open `BP_ASD_SpawnInterceptor`.
 
 ### Variables to Create (Left Panel):
 
@@ -53,7 +53,7 @@ This invisible actor runs silently on the server/host, parses the `.ini` setting
 
 ## Part 3: Blueprint Event Graph Logic
 
-Open the **Event Graph** of `BP_ASE_SpawnInterceptor`.
+Open the **Event Graph** of `BP_ASD_SpawnInterceptor`.
 
 ### 1. Server Authority Check
 All creature destruction and INI reading **must** run on the server/host:
@@ -74,7 +74,7 @@ From the **Authority** pin, cast to the GameMode to access ARK's INI helper:
        ▼
 [Get Bool Option Ini] 
     ├── Target: ShooterGameMode
-    ├── Section: "ASEPurist"
+    ├── Section: "ArkSurvivalDescended"
     ├── Option: "AllowPyromane"
     └── Default: False
        │
@@ -99,7 +99,7 @@ Repeat this simple check (or create a small Blueprint Macro) for the following c
 * `Armadoggo_Character_BP_C` (Option: `"AllowArmadoggo"`)
 
 **For Garuga Additions:**
-First check: `GetBoolOptionIni("ASEPurist", "AllowAllGarugaAdditions")`.
+First check: `GetBoolOptionIni("ArkSurvivalDescended", "AllowAllGarugaAdditions")`.
 * If `False`, check individual toggles:
   * `Ceratosaurus_Character_BP_C` (Option: `"AllowCeratosaurus"`)
   * `Deinosuchus_Character_BP_C` (Option: `"AllowDeinosuchus"`)
@@ -161,14 +161,14 @@ flowchart TD
     G --> E
 ```
 
-Compile and Save `BP_ASE_SpawnInterceptor`!
+Compile and Save `BP_ASD_SpawnInterceptor`!
 
 ---
 
 ## Part 4: Placing the Interceptor in the Entry Level
 
-1. Open `ASEPurist_EntryLevel`.
-2. Drag `BP_ASE_SpawnInterceptor` from your Content Browser into the level viewport (coordinates at `0, 0, 0`).
+1. Open `ArkSurvivalDescended_EntryLevel`.
+2. Drag `BP_ASD_SpawnInterceptor` from your Content Browser into the level viewport (coordinates at `0, 0, 0`).
 3. Save the level.
 
 ---
@@ -198,8 +198,8 @@ Compile and Save `BP_ASE_SpawnInterceptor`!
 
 1. In the DevKit top toolbar, locate the **CurseForge / Mod Tools** button.
 2. Click **Cook & Package Mod**:
-   - Primary Game Data: `PrimalGameData_BP_ASEPurist`
-   - Mod Title: **ASE Purist (Classic Creature Spawns)**
+   - Primary Game Data: `PrimalGameData_BP_ArkSurvivalDescended`
+   - Mod Title: **Ark Survival Descended (Classic Creature Spawns)**
    - Description: Copy from `README.md`
 3. Check target platforms:
    - [x] **Windows (PC)**

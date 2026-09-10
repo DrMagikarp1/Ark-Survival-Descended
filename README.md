@@ -1,4 +1,4 @@
-# ARK: Survival Ascended - ASE Purist Mod
+# ARK: Survival Ascended - Ark Survival Descended
 
 > A lightweight, highly compatible mod for **ARK: Survival Ascended (ASA)** that restores creature spawns to classic **ARK: Survival Evolved (ASE)** standards.
 
@@ -6,7 +6,7 @@
 
 ## 🌟 Overview
 
-The **ASE Purist Mod** eliminates modern power-creep and paid DLC creatures introduced during the lifespan of *ARK: Survival Ascended*, returning the wild creature ecosystem to what existed in *ARK: Survival Evolved*.
+The **Ark Survival Descended** mod eliminates modern power-creep and paid DLC creatures introduced during the lifespan of *ARK: Survival Ascended*, returning the wild creature ecosystem to what existed in *ARK: Survival Evolved*.
 
 ### Key Design Principles:
 1. **Filter by Origin Date, NOT by Map:**
@@ -23,9 +23,9 @@ The **ASE Purist Mod** eliminates modern power-creep and paid DLC creatures intr
 
 ## 📁 Repository Files
 
-* **[creature_reference.md](file:///home/benc/Documents/agents/creature_reference.md):** The comprehensive database of Blueprint class names for all ASA-exclusive, Garuga, and ASE-legacy creatures.
-* **[GameUserSettings_template.ini](file:///home/benc/Documents/agents/GameUserSettings_template.ini):** Complete, commented configuration file for server admins and singleplayer games.
-* **[blueprint_assembly_guide.md](file:///home/benc/Documents/agents/blueprint_assembly_guide.md):** Step-by-step visual scripting and DevKit wiring guide to assemble the mod in Unreal Engine 5.
+* **[creature_reference.md](file:///home/benc/antigravityprojects/arksurvivaldevolved/Ark-Survival-Descended/creature_reference.md):** The comprehensive database of Blueprint class names for all ASA-exclusive, Garuga, and ASE-legacy creatures.
+* **[GameUserSettings_template.ini](file:///home/benc/antigravityprojects/arksurvivaldevolved/Ark-Survival-Descended/GameUserSettings_template.ini):** Complete, commented configuration file for server admins and singleplayer games.
+* **[blueprint_assembly_guide.md](file:///home/benc/antigravityprojects/arksurvivaldevolved/Ark-Survival-Descended/blueprint_assembly_guide.md):** Step-by-step visual scripting and DevKit wiring guide to assemble the mod in Unreal Engine 5.
 
 ---
 
@@ -48,10 +48,10 @@ The **ASE Purist Mod** eliminates modern power-creep and paid DLC creatures intr
 
 ## ⚙️ Configuration Quick Start
 
-Add the `[ASEPurist]` header to your `GameUserSettings.ini`:
+Add the `[ArkSurvivalDescended]` header to your `GameUserSettings.ini`:
 
 ```ini
-[ASEPurist]
+[ArkSurvivalDescended]
 ; Allow Cosmo to spawn:
 AllowCosmo=True
 
