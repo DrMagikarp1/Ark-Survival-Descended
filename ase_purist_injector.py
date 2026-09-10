@@ -76,11 +76,16 @@ CREATURE_DATABASE = {
         "title": "Fantastic Tames (Paid Micro-DLC)",
         "description": "Fantastic Tames Paid Micro-DLC Creatures",
         "classes": [
-            ("SpiritBear_Character_BP_C", "Elderclaw (Spirit Bear)"),
-            ("Pyromane_Character_BP_C", "Pyromane (Fire Lion)"),
-            ("Dreadmare_Character_BP_C", "Dreadmare (Dark Pegasus)"),
+            ("SpiritBear_Character_BP_C", "Elderclaw (Spirit Bear - Fantastic Tames)"),
+            ("Elderclaw_Character_BP_C", "Elderclaw (Direct Alias)"),
+            ("FireLion_Character_BP_C", "Pyromane (Fire Lion - Official ASA Class)"),
+            ("FireLion_Character_BP_Thrall_C", "Pyromane Thrall (Lost Colony Variant)"),
+            ("Pyromane_Character_BP_C", "Pyromane (Direct Alias)"),
+            ("DarkPegasus_Character_BP_C", "Dreadmare (Dark Pegasus - Official ASA Class)"),
+            ("Dreadmare_Character_BP_C", "Dreadmare (Direct Alias)"),
+            ("Jackalope_Character_BP_C", "Burrowbuck (Jackalope - Official ASA Class)"),
+            ("Burrowbuck_Character_BP_C", "Burrowbuck (Direct Alias)"),
             ("Cerberax_Character_BP_C", "Cerberax (Three-headed Hound)"),
-            ("Burrowbuck_Character_BP_C", "Burrowbuck"),
             ("Enigmasaur_Character_BP_C", "Enigmasaur")
         ]
     },
@@ -89,9 +94,12 @@ CREATURE_DATABASE = {
         "description": "Bob's Tall Tales Adventure Pass Creatures",
         "classes": [
             ("Oasisaur_Character_BP_C", "Oasisaur (Frontier Showdown)"),
-            ("Cosmo_Character_BP_C", "Cosmo (Steampunk Ascent)"),
-            ("Sir5rM8_Character_BP_C", "Sir-5rM-8 Automaton (Steampunk Ascent)"),
-            ("Armadoggo_Character_BP_C", "Armadoggo (Wasteland War)")
+            ("JumpingSpider_Character_BP_C", "Cosmo (Jumping Spider - Official ASA Class)"),
+            ("Cosmo_Character_BP_C", "Cosmo (Direct Alias)"),
+            ("HelperBot_Character_BP_C", "Sir-5rM-8 (Helper Bot - Official ASA Class)"),
+            ("Sir5rM8_Character_BP_C", "Sir-5rM-8 (Direct Alias)"),
+            ("Doggo_Character_BP_C", "Armadoggo (Doggo - Official ASA Class)"),
+            ("Armadoggo_Character_BP_C", "Armadoggo (Direct Alias)")
         ]
     },
     "ASA_STORY_VOTES": {
@@ -111,14 +119,28 @@ CREATURE_DATABASE = {
         "title": "Garuga's ARK Additions (Official ASA)",
         "description": "Garuga123's ARK Additions (Official ASA Base Game Integrations)",
         "classes": [
-            ("Ceratosaurus_Character_BP_C", "Ceratosaurus"),
-            ("Deinosuchus_Character_BP_C", "Deinosuchus"),
-            ("Acrocanthosaurus_Character_BP_C", "Acrocanthosaurus"),
-            ("Concavenator_Character_BP_C", "Concavenator"),
-            ("Archelon_Character_BP_C", "Archelon"),
-            ("Brachiosaurus_Character_BP_C", "Brachiosaurus"),
-            ("Xiphactinus_Character_BP_C", "Xiphactinus"),
-            ("Helicoprion_Character_BP_C", "Helicoprion")
+            ("Xiphactinus_Character_BP_ASA_C", "Xiphactinus (Official ASA Class)"),
+            ("Xiphactinus_Character_BP_C", "Xiphactinus (Additions Port Class)"),
+            ("Ceratosaurus_Character_BP_ASA_C", "Ceratosaurus (Official ASA Class)"),
+            ("CeratosaurusAA_Character_BP_C", "Ceratosaurus (Additions Mod Class)"),
+            ("Ceratosaurus_Character_BP_C", "Ceratosaurus (Direct Alias)"),
+            ("DeinosuchusASA_Character_BP_C", "Deinosuchus (Official ASA Class)"),
+            ("Deinosuchus_Character_BP_ASA_C", "Deinosuchus (Official ASA Alt)"),
+            ("DeinosuchusAA_Character_BP_C", "Deinosuchus (Additions Mod Class)"),
+            ("Deinosuchus_Character_BP_C", "Deinosuchus (Direct Alias)"),
+            ("Archelon_Character_BP_ASA_C", "Archelon (Official ASA Class)"),
+            ("Archelon_Character_BP_C", "Archelon (Direct Alias)"),
+            ("Brachiosaurus_Character_BP_C", "Brachiosaurus (Additions Class)"),
+            ("Brachiosaurus_Character_BP_ASA_C", "Brachiosaurus (Official ASA Class)"),
+            ("BrachiosaurusAA_Character_BP_C", "Brachiosaurus (Additions Mod Class)"),
+            ("Helicoprion_Character_BP_C", "Helicoprion (Additions Class)"),
+            ("Helicoprion_Character_BP_ASA_C", "Helicoprion (Official ASA Class)"),
+            ("Acrocanthosaurus_Character_BP_C", "Acrocanthosaurus (Additions Class)"),
+            ("Acrocanthosaurus_Character_BP_ASA_C", "Acrocanthosaurus (Official ASA Class)"),
+            ("AcrocanthosaurusAA_Character_BP_C", "Acrocanthosaurus (Additions Mod Class)"),
+            ("Concavenator_Character_BP_C", "Concavenator (Additions Class)"),
+            ("Concavenator_Character_BP_ASA_C", "Concavenator (Official ASA Class)"),
+            ("ConcavenatorAA_Character_BP_C", "Concavenator (Additions Mod Class)")
         ]
     }
 }

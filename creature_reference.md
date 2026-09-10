@@ -71,25 +71,25 @@ These creatures originated as popular third-party mods in ASE and were integrate
 
 ## 5. Fantastic Tames (Paid Micro-DLCs)
 
-| Creature | Blueprint Class Name | Description | Action |
+| Creature | Blueprint Class Name(s) | Description | Action |
 | :--- | :--- | :--- | :--- |
-| **Elderclaw** | `SpiritBear_Character_BP_C` | Spirit bear / ancient apex bear | **BLOCK** |
-| **Pyromane** | `Pyromane_Character_BP_C` | Flame shoulder pet / rideable lion | **BLOCK** |
-| **Dreadmare** | `Dreadmare_Character_BP_C` | Dark pegasus / shadow steed | **BLOCK** |
+| **Elderclaw** | `SpiritBear_Character_BP_C`, `Elderclaw_Character_BP_C` | Spirit bear / ancient apex bear | **BLOCK** |
+| **Pyromane** | `FireLion_Character_BP_C`, `FireLion_Character_BP_Thrall_C`, `Pyromane_Character_BP_C` | Flame shoulder pet / rideable lion | **BLOCK** |
+| **Dreadmare** | `DarkPegasus_Character_BP_C`, `Dreadmare_Character_BP_C` | Dark pegasus / shadow steed | **BLOCK** |
+| **Burrowbuck** | `Jackalope_Character_BP_C`, `Burrowbuck_Character_BP_C` | Burrowing horned rabbit / mount | **BLOCK** |
 | **Cerberax** | `Cerberax_Character_BP_C` | Three-headed hound | **BLOCK** |
-| **Burrowbuck** | `Burrowbuck_Character_BP_C` | Burrowing mount | **BLOCK** |
 | **Enigmasaur** | `Enigmasaur_Character_BP_C` | Fantastic tame | **BLOCK** |
 
 ---
 
 ## 6. Bob's Tall Tales (Adventure Pass)
 
-| Creature | Blueprint Class Name | Story Map | Action |
+| Creature | Blueprint Class Name(s) | Story Map | Action |
 | :--- | :--- | :--- | :--- |
 | **Oasisaur** | `Oasisaur_Character_BP_C` | Scorched Earth | **BLOCK** |
-| **Cosmo** | `Cosmo_Character_BP_C` | Aberration | **BLOCK** |
-| **Sir-5rM-8** | `Sir5rM8_Character_BP_C` | Aberration (Clockwork Automaton) | **BLOCK** |
-| **Armadoggo** | `Armadoggo_Character_BP_C` | Extinction | **BLOCK** |
+| **Cosmo** | `JumpingSpider_Character_BP_C`, `Cosmo_Character_BP_C` | Aberration (Jumping Spider) | **BLOCK** |
+| **Sir-5rM-8** | `HelperBot_Character_BP_C`, `Sir5rM8_Character_BP_C` | Aberration (Helper Bot Automaton) | **BLOCK** |
+| **Armadoggo** | `Doggo_Character_BP_C`, `Armadoggo_Character_BP_C` | Extinction (Doggo) | **BLOCK** |
 
 ---
 
@@ -109,16 +109,16 @@ These creatures originated as popular third-party mods in ASE and were integrate
 
 ## 8. Garuga123's ARK Additions (Official Base Game Integrations)
 
-| Creature | Blueprint Class Name | Description | Action |
+| Creature | Blueprint Class Name(s) | Description | Action |
 | :--- | :--- | :--- | :--- |
-| **Ceratosaurus** | `Ceratosaurus_Character_BP_C` | Venomous horned theropod | **BLOCK** |
-| **Deinosuchus** | `Deinosuchus_Character_BP_C` | Gigantic croc with giga-bite | **BLOCK** |
-| **Acrocanthosaurus** | `Acrocanthosaurus_Character_BP_C` | High-damage apex predator | **BLOCK** |
-| **Concavenator** | `Concavenator_Character_BP_C` | Sand-burrowing carnivore | **BLOCK** |
-| **Archelon** | `Archelon_Character_BP_C` | Giant sea turtle | **BLOCK** |
-| **Brachiosaurus** | `Brachiosaurus_Character_BP_C` | Titan-class sauropod | **BLOCK** |
-| **Xiphactinus** | `Xiphactinus_Character_BP_C` | Ravenous ocean fish | **BLOCK** |
-| **Helicoprion** | `Helicoprion_Character_BP_C` | Spiral-jawed shark | **BLOCK** |
+| **Xiphactinus** | `Xiphactinus_Character_BP_ASA_C`, `Xiphactinus_Character_BP_C` | Ravenous ocean fish | **BLOCK** |
+| **Ceratosaurus** | `Ceratosaurus_Character_BP_ASA_C`, `CeratosaurusAA_Character_BP_C`, `Ceratosaurus_Character_BP_C` | Venomous horned theropod | **BLOCK** |
+| **Deinosuchus** | `DeinosuchusASA_Character_BP_C`, `Deinosuchus_Character_BP_ASA_C`, `DeinosuchusAA_Character_BP_C`, `Deinosuchus_Character_BP_C` | Gigantic croc with giga-bite | **BLOCK** |
+| **Archelon** | `Archelon_Character_BP_ASA_C`, `Archelon_Character_BP_C` | Giant sea turtle | **BLOCK** |
+| **Brachiosaurus** | `Brachiosaurus_Character_BP_C`, `Brachiosaurus_Character_BP_ASA_C`, `BrachiosaurusAA_Character_BP_C` | Titan-class sauropod | **BLOCK** |
+| **Helicoprion** | `Helicoprion_Character_BP_C`, `Helicoprion_Character_BP_ASA_C` | Spiral-jawed shark | **BLOCK** |
+| **Acrocanthosaurus** | `Acrocanthosaurus_Character_BP_C`, `Acrocanthosaurus_Character_BP_ASA_C`, `AcrocanthosaurusAA_Character_BP_C` | High-damage apex predator | **BLOCK** |
+| **Concavenator** | `Concavenator_Character_BP_C`, `Concavenator_Character_BP_ASA_C`, `ConcavenatorAA_Character_BP_C` | Sand-burrowing carnivore | **BLOCK** |
 
 ---
 
